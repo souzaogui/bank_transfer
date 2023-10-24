@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #34719b;
+  --padding: 15px;
+  --cinza-claro: #dedede;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-width: 370px;
+}
+
+a {
+  color: inherit;
+}
