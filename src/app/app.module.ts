@@ -3,11 +3,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {TransferComponent} from './modules/transfer/transfer.component';
-import {ExtractComponent} from './modules/extract/extract.component';
 import {registerLocaleData} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
-import {SelectComponent} from './commons/select/select.component';
 import {NgxMaskModule} from "ngx-mask";
 
 import localePt from '@angular/common/locales/pt';
@@ -29,43 +26,40 @@ import {
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TransferComponent,
-    ExtractComponent,
-    SelectComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    NgxMaskModule.forRoot(),
-    RouterModule.forRoot([]),
-    PoPageModule,
-    PoToolbarModule,
-    PoMenuModule,
-    PoMenuPanelModule,
-    PoFieldModule,
-    ReactiveFormsModule,
-    PoButtonModule,
-    PoModalModule,
-    PoInfoModule,
-    PoContainerModule,
-    PoTableModule,
-    PoWidgetModule
-  ],
-  providers: [
-    {
-      provide: LOCALE_ID,
-      useValue: 'pt'
-    },
-    {
-      provide: DEFAULT_CURRENCY_CODE,
-      useValue: 'BRL'
-    }
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        NgxMaskModule.forRoot(),
+        RouterModule.forRoot([]),
+        PoPageModule,
+        PoToolbarModule,
+        PoMenuModule,
+        PoMenuPanelModule,
+        PoFieldModule,
+        ReactiveFormsModule,
+        PoButtonModule,
+        PoModalModule,
+        PoInfoModule,
+        PoContainerModule,
+        PoTableModule,
+        PoWidgetModule
+    ],
+    providers: [
+        {
+            provide: LOCALE_ID,
+            useValue: 'pt'
+        },
+        {
+            provide: DEFAULT_CURRENCY_CODE,
+            useValue: 'BRL'
+        }
+    ],
+    bootstrap: [AppComponent]
 })
 
 export class AppModule {
