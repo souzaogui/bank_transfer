@@ -27,7 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/app/assets"
             ],
             "styles": [
               "./node_modules/@po-ui/style/css/po-theme-default.min.css",
@@ -91,7 +91,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/app/assets"
             ],
             "styles": [
               "./node_modules/@po-ui/style/css/po-theme-default.min.css",

@@ -1,29 +1,38 @@
 import {DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
-import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {registerLocaleData} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
-import {NgxMaskModule} from "ngx-mask";
 
 import localePt from '@angular/common/locales/pt';
-import {RouterModule} from '@angular/router';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {
-  PoButtonModule,
-  PoContainerModule,
-  PoFieldModule,
-  PoInfoModule,
-  PoMenuModule,
-  PoMenuPanelModule,
-  PoModalModule,
-  PoPageModule,
-  PoTableModule,
-  PoToolbarModule,
-  PoWidgetModule
+    PoButtonModule,
+    PoContainerModule,
+    PoFieldModule,
+    PoInfoModule,
+    PoMenuModule,
+    PoMenuPanelModule,
+    PoModalModule,
+    PoPageModule,
+    PoTableModule,
+    PoToolbarModule,
+    PoWidgetModule
 } from "@po-ui/ng-components";
+import {GridModule} from '@progress/kendo-angular-grid';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 registerLocaleData(localePt, 'pt');
+
+// Configura-se as rotas do menu
+const routes: Routes = [
+    {
+        path: 'extrato',
+        loadChildren: () => import('./modules/extrato/extrato-page.module').then(m => m.ExtratoPageModule)
+    }
+];
 
 @NgModule({
     declarations: [
@@ -31,11 +40,9 @@ registerLocaleData(localePt, 'pt');
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule,
         FormsModule,
         HttpClientModule,
-        NgxMaskModule.forRoot(),
-        RouterModule.forRoot([]),
+        RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}),
         PoPageModule,
         PoToolbarModule,
         PoMenuModule,
@@ -47,7 +54,9 @@ registerLocaleData(localePt, 'pt');
         PoInfoModule,
         PoContainerModule,
         PoTableModule,
-        PoWidgetModule
+        PoWidgetModule,
+        GridModule,
+        BrowserAnimationsModule
     ],
     providers: [
         {

@@ -9,7 +9,7 @@ import {PoMenuItem, PoToolbarAction, PoToolbarProfile} from '@po-ui/ng-component
 })
 export class AppComponent {
 
-    menus: Array<PoMenuItem> = [];
+    menu: Array<PoMenuItem> = [];
     profile: PoToolbarProfile = Object.create(null);
     profileActions: PoToolbarAction[] = [];
 
@@ -46,11 +46,9 @@ export class AppComponent {
     }
 
     private createMenu() {
-        this.menus = [];
-
-        this.menus.push({
+        this.menu.push({
             label: "Extratos",
-            link: 'extract',
+            link: 'extrato',
             icon: 'po-icon-finance',
             shortLabel: "Extratos",
         });

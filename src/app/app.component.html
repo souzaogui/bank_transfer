@@ -1,13 +1,13 @@
 <div class="po-wrapper">
-    <po-toolbar [p-title]="'Bank Transfer'" [p-profile]="profile"
+    <po-toolbar [p-title]="'Transferências Bancárias'" [p-profile]="profile"
                 [p-profile-actions]="profileActions"></po-toolbar>
 
     <po-menu
-            [p-menus]="menus"
+            [p-menus]="menu"
             [p-filter]="true"
             [p-collapsed]="true"
-            p-logo="assets/totvs-logo-grey.svg"
-            p-short-logo="assets/money.png"
+            p-logo="./assets/banco_extension.svg"
+            p-short-logo="./assets/banco.png"
     ></po-menu>
 
     <router-outlet></router-outlet>

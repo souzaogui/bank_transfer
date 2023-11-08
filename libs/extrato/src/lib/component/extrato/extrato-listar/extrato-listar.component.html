@@ -1,0 +1,59 @@
+<sl-grid-container
+    #gridContainer
+    [sl-show-more]="true"
+    [sl-show-column-chooser]="true"
+    [sl-show-export-excel]="true"
+    [sl-show-export-pdf]="true"
+    [sl-actions]="gridActions"
+    [sl-title]="i18n.romaneios.listagemRomaneios"
+    [sl-quick-search]="quickSearchParam"
+    [sl-advanced-search]="advancedSearchParam"
+>
+    <kendo-grid slGridBindingService tacoCommonScrollableKendoGrid
+                [group]="gridState.group"
+                (dataStateChange)="dataStateChange($event)"
+                [sl-totalizer-grid-service]="totalDataService"
+                [sl-grid-service]="dataService"
+                (slAfterDataLoaded)="formatarColunas($event)">
+        <sl-grid-column-more-actions [sl-more-actions]="moreActions"></sl-grid-column-more-actions>
+        <kendo-grid-column field="romaneio" [width]="100" [title]="i18n.romaneios.romaneio"> </kendo-grid-column>
+        <kendo-grid-column field="tipoMovimento" [width]="150" [title]="i18n.romaneios.tipoMovimento">
+            <ng-template kendoGridCellTemplate let-dataItem>
+                <po-tag
+                        [p-value]="getTagValue(dataItem.tipoMovimento, i18n.enums.tipoMovimento)"
+                        [p-color]="getTagColor(dataItem.tipoMovimento, i18n.enums.tipoMovimentoColor)"
+                ></po-tag>
+            </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="situacao" [width]="200" [title]="i18n.romaneios.situacao">
+            <ng-template kendoGridCellTemplate let-dataItem>
+                <po-tag
+                        [p-value]="getTagValue(dataItem.situacao, i18n.enums.situacaoRomaneio)"
+                        [p-color]="getTagColor(dataItem.situacao, i18n.enums.situacaoRomaneioColor)"
+                ></po-tag>
+            </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="unidade" [width]="200"  [title]="i18n.romaneios.unidade"> </kendo-grid-column>
+        <kendo-grid-column field="emitente" [width]="350" [title]="i18n.romaneios.clienteFornecedor"></kendo-grid-column>
+        <kendo-grid-column field="armazem" [width]="350" [title]="i18n.romaneios.armazem"></kendo-grid-column>
+        <kendo-grid-column field="produto" [width]="250" [title]="i18n.romaneios.produto"> </kendo-grid-column>
+        <kendo-grid-column field="placa" [width]="100" [title]="i18n.romaneios.placa"> </kendo-grid-column>
+        <kendo-grid-column field="ticketPesagem" [width]="100" [title]="i18n.romaneios.ticket"> </kendo-grid-column>
+        <kendo-grid-column field="dataTransacao" [width]="150" [title]="i18n.romaneios.dataTransacao">
+            <ng-template kendoGridCellTemplate let-dataItem>
+                <span [innerText]="formataData(dataItem.dataTransacao)"></span>
+            </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="dataCriacao" [width]="150" [title]="i18n.romaneios.dataCriacao">
+            <ng-template kendoGridCellTemplate let-dataItem>
+                <span [innerText]="formataData(dataItem.dataCriacao)"></span>
+            </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="pesoLiquido" [width]="130" [title]="i18n.romaneios.pesoLiquido">
+            <ng-template kendoGridCellTemplate let-dataItem>
+                <span [innerText]="dataItem.pesoLiquido | formatQtd"></span>
+            </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column  field="codigoControle" [width]="150" [title]="i18n.romaneios.codigoControle" [hidden]="true"></kendo-grid-column>
+    </kendo-grid>
+</sl-grid-container>
