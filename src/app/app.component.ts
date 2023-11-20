@@ -46,12 +46,20 @@ export class AppComponent {
     }
 
     private createMenu() {
-        this.menu.push({
-            label: "Extratos",
-            link: 'extrato',
-            icon: 'po-icon-finance',
-            shortLabel: "Extratos",
-        });
+        this.menu.push(
+            {
+                label: "Extratos",
+                link: 'extrato',
+                icon: 'po-icon-finance',
+                shortLabel: "Extratos",
+            },
+            {
+                label: "Transferências",
+                link: 'transferencia',
+                icon: 'po-icon-money',
+                shortLabel: "Transferências",
+            }
+        );
     }
 
     private static logout() {
