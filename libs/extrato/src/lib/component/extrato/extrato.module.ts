@@ -15,6 +15,7 @@ import {
 } from '@po-ui/ng-components';
 import {GridModule} from '@progress/kendo-angular-grid';
 import {ExtratoListarComponent} from "./extrato-listar/extrato-listar.component";
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
     imports: [
@@ -32,6 +33,7 @@ import {ExtratoListarComponent} from "./extrato-listar/extrato-listar.component"
         PoModalModule,
         FormsModule,
         PoLoadingModule,
+        MatTableModule
     ],
     declarations: [
         ExtratoListarComponent

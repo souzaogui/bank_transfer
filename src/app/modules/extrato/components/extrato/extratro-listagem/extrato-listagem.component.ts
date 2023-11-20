@@ -22,13 +22,8 @@ export class ExtratoListagemComponent implements OnInit {
     private configureBreadcrumb() {
         this.breadcrumb = {
             items: [
-                {label: 'Extrato', link: '/extrato'},
-                {label: 'Extrato'}
+                {label: 'Extrato', link: '/extrato'}
             ]
         }
     }
-
-    // goToNovoRomaneio() {
-    //     this.router.navigate(['novo'], {relativeTo: this.activatedRoute}).then(r => console.log(r));
-    // }
 }
