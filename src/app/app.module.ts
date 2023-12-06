@@ -31,6 +31,10 @@ const routes: Routes = [
     {
         path: 'extrato',
         loadChildren: () => import('./modules/extrato/extrato-page.module').then(m => m.ExtratoPageModule)
+    },
+    {
+        path: 'transferencia',
+        loadChildren: () => import('./modules/transferencia/transferencia-page.module').then(m => m.TransferenciaPageModule)
     }
 ];
 

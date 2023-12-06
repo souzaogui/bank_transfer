@@ -1,24 +1,22 @@
 import {NgModule} from '@angular/core';
-import {ExtratoRoutingModule} from "./extrato-routing.module";
 import {PoModalModule, PoPageModule, PoTabsModule} from "@po-ui/ng-components";
-import {ExtratoListagemComponent} from "./extratro-listagem/extrato-listagem.component";
-import {ExtratoModule} from "../../../../../../libs/extrato/src";
+import {TransferenciaRegistroComponent} from "./transferencia-registro/transferencia-registro.component";
+import {TransferenciaRoutingModule} from "./transferencia-routing.module";
 
 @NgModule({
     imports: [
-        ExtratoRoutingModule,
+        TransferenciaRoutingModule,
         PoModalModule,
         PoPageModule,
-        PoTabsModule,
-        ExtratoModule
+        PoTabsModule
     ],
     declarations: [ // Declarar componentes para que sejam enxergados.
-        ExtratoListagemComponent
+        TransferenciaRegistroComponent
     ],
     providers: [],
     exports: [ // Exportar componentes para que outros compoenentes possam utilizar.
-        ExtratoListagemComponent
+        TransferenciaRegistroComponent
     ],
 })
-export class ExtratoPageModule {
+export class TransferenciaPageModule {
 }
